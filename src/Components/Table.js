@@ -2,7 +2,7 @@ import React, {useEffect, useContext, useState} from 'react'
 import Draggable from 'react-draggable';
 import './Stylesheets/Table.css';
 
-function Table() {
+function Table({title}) {
 
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
     const [clientCoords, setClientCoords] = useState({x: 0, y: 0});
@@ -41,7 +41,7 @@ function Table() {
         <Draggable onDrag={handleDrag} onStop={eventLogger} defaultPosition={{x: windowDimensions.width / 2, y: windowDimensions.height / 2}} 
             bounds="parent">
             <div className='table'>
-                <h2> Hello! I am a table </h2>
+                <h2> {title} </h2>
                 <h3>(x: {clientCoords.x}, y: {clientCoords.y})</h3>
                 <h2>attr</h2>
                 <h2>attr</h2>
