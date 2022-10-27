@@ -1,0 +1,13 @@
+.table {
+    cursor: grab;
+    border: 4px;
+    border-color: black;
+    background-color: aqua;
+    width: max-content;
+    height: max-content;
+    padding: 0.1% 1% 0.5% 1%; 
+}
+
+.table:hover {
+    cursor: move;
+}
