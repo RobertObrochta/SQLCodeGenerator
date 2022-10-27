@@ -4,48 +4,49 @@ import './Stylesheets/Table.css';
 
 function Table() {
 
-
-    function getClientCoords(x, y){
-        setClientCoords({x, y});
-    }
-    
-    function eventLogger (e, data) {
-        getClientCoords(e.clientX, e.clientY)
-        // console.log('Event: ', e);
-        // console.log('Data: ', data);
-    };
-    
     const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
-    const [clientCoords, setClientCoords] = useState({});
-
-    const padding = 30;
+    const [clientCoords, setClientCoords] = useState({x: 0, y: 0});
 
     useEffect(() => {
         resizeHandler();
     }, []);
-
+    
+    function eventLogger (e, data) {
+        console.log('Event: ', e);
+        console.log('Data: ', data);
+    };
+    
+    //This will get the height and the width of the viewport
     function getWindowDimensions(){
         const {innerWidth : width, innerHeight : height} = window;
         return {width, height};
     }
 
+    //This will set these dimensions
     function resizeHandler() {
         setWindowDimensions(getWindowDimensions());
-        console.log(windowDimensions);
+    }
+
+    //On drag, this will record the coords
+    function handleDrag(e, data){
+        setClientCoords({
+            x: data.x,
+            y: data.y,
+        });
+
     }
 
 
     return(
-        <div>
-            <Draggable  onStop={eventLogger} defaultPosition={{x: windowDimensions.width / 2, y: windowDimensions.height / 2}} 
-                bounds={{left: padding, right: windowDimensions.width - padding, top: padding, bottom: windowDimensions.height + padding}}>
-                <div className='table'>
-                    <h1>{clientCoords.x}, {clientCoords.y}</h1>
-                    <h2>attr</h2>
-                    <h2>attr</h2>
-                </div>
-            </Draggable>
-        </div>
+        <Draggable onDrag={handleDrag} onStop={eventLogger} defaultPosition={{x: windowDimensions.width / 2, y: windowDimensions.height / 2}} 
+            bounds="parent">
+            <div className='table'>
+                <h2> Hello! I am a table </h2>
+                <h3>(x: {clientCoords.x}, y: {clientCoords.y})</h3>
+                <h2>attr</h2>
+                <h2>attr</h2>
+            </div>
+        </Draggable> 
     );
     
 }
