@@ -7,9 +7,9 @@
 ## Feature Implementations
 
 ### Planning
-- [] Add movable div to screen
-- [] Add button to spawn a new div
-- [] Modal to edit: 
+- [ ] Add movable div to screen
+- [ ] Add button to spawn a new div
+- [ ] Modal to edit: 
     - Table name
     - Variable
     - Data type
