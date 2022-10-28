@@ -20,5 +20,4 @@
 - [x] Add movable div to screen
 
 ### Bugs
-- [ ] Movable divs go outside the bounds of the browser window
-- [ ] Movable have arbitrary y restrictions (during multiple divs)
+- [ ] Movable divs go outside the bounds of the browser window **when minimizing windows**
