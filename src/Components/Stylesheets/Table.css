@@ -1,13 +1,15 @@
 .table {
     cursor: grab;
-    border: 4px;
-    border-color: black;
-    background-color: aqua;
+    border-radius: 5px;
+    background-color: #424856;
     width: max-content;
     height: max-content;
     padding: 0.1% 1% 0.5% 1%; 
+    color: white;
+    position: absolute;
 }
 
 .table:hover {
+    border: 1px solid #98c379;
     cursor: move;
 }
