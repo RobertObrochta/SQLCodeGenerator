@@ -7,14 +7,13 @@
 ## Feature Implementations
 
 ### Planning
-- [ ] Modal to edit and add to a SQL Table div: 
-    - Table name
-    - Variable
-    - Data type
-
 
 ### In Progress
 - [ ] Add button to spawn a new div - **RO**
+- [ ] Modal to edit and add to a SQL Table div:  - **GB**
+    - Table name
+    - Variable
+    - Data type
 
 ### Completed
 - [x] Add movable div to screen
