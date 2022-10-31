@@ -1,12 +1,19 @@
 import './App.css';
-import Table from "./Components/Table"
+import React from 'react';
+import Toolbar from './Components/Toolbar';
+import {TableProvider} from './Contexts/TableContext';
+import Workspace from './Components/Workspace';
 
 
 function App() {
+  const [tables, setTables] = React.useState([]); // eventually, will be an API call to initialize the tables
+
   return (
     <div className="App">
-      <Table title={"Hello! I am a table."}/>
-      <Table title={"Howdy! I am also a table."}/>
+      <TableProvider value={{tables, setTables}}> 
+        <Toolbar/>
+        <Workspace/>
+      </TableProvider>
     </div>
   );
 }

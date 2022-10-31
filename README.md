@@ -13,10 +13,11 @@
     - Data type
 
 ### In Progress
-- [ ] Add button to spawn a new div - **RO**
+
 
 ### Completed
 - [x] Add movable div to screen
+- [x] Add button to spawn a new div
 
 ### Bugs
 - [ ] Movable divs go outside the bounds of the browser window **when minimizing windows**
