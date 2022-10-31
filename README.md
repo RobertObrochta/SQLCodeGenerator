@@ -11,13 +11,6 @@
     - Table name
     - Variable
     - Data type
-- [ ] Expand TableContext field to include all possible fields of an individual table, as well as their set... functions
-    - title
-    - attributes
-    - coordinates as they are moved around
-    - anything else
-- [ ] Implement Save State of current board (from TableContext)
-    - Initial state will be fetched and passed into TableProvider value={_} in App.js
 
 ### In Progress
 
