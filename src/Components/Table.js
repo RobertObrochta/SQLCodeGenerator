@@ -40,7 +40,7 @@ function Table({title}) {
     return(
         <Draggable onDrag={handleDrag} onStop={eventLogger} defaultPosition={{x: windowDimensions.width / 2, y: windowDimensions.height / 2}} 
             bounds="parent">
-            <div className='table'>
+            <div className='sql-table'>
                 <h2> {title} </h2>
                 <h3>(x: {clientCoords.x}, y: {clientCoords.y})</h3>
                 <h2>attr</h2>
