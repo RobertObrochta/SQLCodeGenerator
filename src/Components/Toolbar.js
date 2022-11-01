@@ -6,7 +6,7 @@ import AddTableModal from './AddTableModal';
 
 
 function Toolbar() {
-    const [totalTables, setTotalTables] = useState(1);
+    const [totalTables, setTotalTables] = useState(0);
     const [newTables, setNewTables] = useState([]);
     const {setTables} = React.useContext(TableContext);
 
@@ -17,8 +17,8 @@ function Toolbar() {
     function handleModalShow () { setModalShow(true) }
 
     //This will add a table
-    function addTable(){
-        const updateTables = newTables.concat({title: `Table ${totalTables}`});
+    function addTable(value){
+        const updateTables = newTables.concat({title: value});
         setNewTables(updateTables);
         setTotalTables(totalTables + 1);
 
@@ -43,7 +43,7 @@ function Toolbar() {
                 </ul>
             </div>
 
-            <AddTableModal show={modalShow} onHide={() => setModalShow(false)} onSubmit={() => addTable()}/>
+            <AddTableModal show={modalShow} onHide={() => setModalShow(false)} valueChangeCallback={addTable}/>
 
         </>
     );
