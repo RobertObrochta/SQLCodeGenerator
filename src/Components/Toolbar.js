@@ -26,6 +26,7 @@ function Toolbar() {
         setModalShow(false);
     }
 
+    //Every time the new tables array is updated, then we update the context.
     useEffect(() => { // update the TableContext from here
         setTables(newTables);
     }, [newTables])
