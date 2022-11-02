@@ -17,17 +17,12 @@ function AddTableModal(props){
         { name: '', type: 'int'},
     ]);
 
-    const [table, setTable] = useState([]);
-
     //This will be called when the submit button is pressed
     function handleSubmit(){
         //Combine data into one table
         const data = {title: title, attributes: inputFields};
-        setTable({...table, data});
-
         //Call back props
         props.valueChangeCallback(data);
-
         //Reset title
         setTitle("");
         //Reset input fields
