@@ -18,7 +18,7 @@ function Toolbar() {
 
     //This will add a table
     function addTable(value){
-        const updateTables = newTables.concat({title: value});
+        const updateTables = newTables.concat({title: value['title'], attributes: value['attributes']});
         setNewTables(updateTables);
         setTotalTables(totalTables + 1);
 

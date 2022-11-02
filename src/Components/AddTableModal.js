@@ -22,11 +22,11 @@ function AddTableModal(props){
     //This will be called when the submit button is pressed
     function handleSubmit(){
         //Combine data into one table
-        const data = {tableName: title, attributes: inputFields};
+        const data = {title: title, attributes: inputFields};
         setTable({...table, data});
 
         //Call back props
-        props.valueChangeCallback(title);
+        props.valueChangeCallback(data);
 
         //Reset title
         setTitle("");
