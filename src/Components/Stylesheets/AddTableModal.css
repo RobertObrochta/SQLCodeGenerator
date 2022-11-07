@@ -1,0 +1,25 @@
+.submit-btn {
+    background-color: #98C379 !important;
+    border: #98C379 !important;
+}
+
+.submit-btn:hover {
+    background-color: #98C379 !important;
+    border: #98C379 !important;
+}
+
+.cancel-btn {
+    background-color: #E06C75 !important;
+    border: #E06C75 !important;
+}
+
+.cancel-btn:hover {
+    background-color: #E06C75 !important;
+    border: #E06C75 !important;
+}
+
+.custom-modal {
+    background-color: #424856 !important;
+    
+}
+

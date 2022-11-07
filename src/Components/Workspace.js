@@ -7,7 +7,7 @@ function Workspace(){
     return(
         <TableContext.Consumer>
         {value => value.tables.map((val, index) => 
-          <Table key={index} title= {val.title}/>
+          <Table key={index} title= {val.title} attributes={val.attributes}/>
         )}
       </TableContext.Consumer>
     );
