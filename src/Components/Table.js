@@ -45,7 +45,7 @@ function Table({title, attributes}) {
                 <h3>(x: {clientCoords.x}, y: {clientCoords.y})</h3>
                 { attributes.map((element) => {
                     return (
-                        <h3>{element['name']}</h3>
+                        <h3>{element['name']} {element['type']}</h3>
                     )
                 })}
             </div>
