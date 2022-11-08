@@ -19,8 +19,6 @@
 
 ### In Progress
 
-- [ ] BUG: Movable divs go outside the bounds of the browser window **when minimizing windows**
-
 ### Completed
 
 - [x] Add movable div to screen
@@ -29,5 +27,6 @@
     - Table name
     - Variable
     - Data type
+- [x] BUG: Movable divs go outside the bounds of the browser window **when minimizing windows**
 
 ### Bugs
