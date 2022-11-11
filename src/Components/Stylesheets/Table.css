@@ -23,15 +23,26 @@
 .sql-column {
     display: flex;
     justify-content: space-between;
-    margin: 10px;
+    /* margin: 10px; */
+    margin: 10px 10px 10px 0px;
+    padding: 5%;
 }
 
-.spacer {
+.sql-column:hover {
+    border-left: 3px solid #98c379;
+}
+
+.spacer {   
     width: 50px;
+}
+
+.sql-atrribute-type {
+    color: #ABB2BF;
 }
 
 .sql-bottom {
     display: flex;
     justify-content: end;
-    margin: 10px;
+    padding: 5%;
+    border-top: 1px solid #ABB2BF;
 }
