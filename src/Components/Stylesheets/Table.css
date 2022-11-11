@@ -4,7 +4,7 @@
     background-color: #424856;
     width: max-content;
     height: max-content;
-    padding: 0.1% 1% 0.5% 1%; 
+    /* padding: 0.1% 1% 0.5% 1%;  */
     color: white;
     position: absolute;
 }
@@ -12,4 +12,26 @@
 .sql-table:hover {
     border: 1px solid #98c379;
     cursor: move;
+}
+
+.sql-header{
+    padding-bottom: 5%;
+    padding-top: 5%;
+    border-bottom: 1px solid #ABB2BF;
+}
+
+.sql-column {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.spacer {
+    width: 50px;
+}
+
+.sql-bottom {
+    display: flex;
+    justify-content: end;
+    margin: 10px;
 }

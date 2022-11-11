@@ -41,13 +41,18 @@ function Table({title, attributes}) {
         <Draggable onDrag={handleDrag} onStop={eventLogger} defaultPosition={{x: windowDimensions.width / 2, y: windowDimensions.height / 2}} 
             bounds="parent">
             <div className='sql-table'>
-                <h2> {title} </h2>
-                <h3>(x: {clientCoords.x}, y: {clientCoords.y})</h3>
+                <div className='sql-header'> {title} </div>
                 { attributes.map((element) => {
                     return (
-                        <h3>{element['name']} {element['type']}</h3>
+                        <div className='sql-column'>
+                            <div className='sql-attribute-name'>{element['name']}</div>
+                            <div className='spacer' />
+                            <div className='sql-attribute-type'>{element['type']}</div>
+                        </div>
                     )
                 })}
+
+                <div className='sql-bottom'>({clientCoords.x}, {clientCoords.y})</div>
             </div>
         </Draggable> 
     );
