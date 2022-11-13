@@ -3,17 +3,15 @@ import Draggable from 'react-draggable';
 import './Stylesheets/Table.css';
 
 function Table({title, attributes}) {
+    let {width, height} = getWindowDimensions();
 
-    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
-    const [clientCoords, setClientCoords] = useState({x: 0, y: 0});
+    const [windowDimensions, setWindowDimensions] = useState({width: width, height: height});
+    const [clientCoords, setClientCoords] = useState({x: 5, y: 5});
 
-    useEffect(() => {
-        resizeHandler();
-    }, []);
     
     function eventLogger (e, data) {
-        console.log('Event: ', e);
-        console.log('Data: ', data);
+        // console.log('Event: ', e);
+        // console.log('Data: ', data);
     };
     
     //This will get the height and the width of the viewport
@@ -24,7 +22,15 @@ function Table({title, attributes}) {
 
     //This will set these dimensions
     function resizeHandler() {
-        setWindowDimensions(getWindowDimensions());
+        const {width, height} = getWindowDimensions();
+        setWindowDimensions({width, height});
+
+        if (clientCoords.x >= windowDimensions.width){
+            setClientCoords({x: windowDimensions.width / 2, y: clientCoords.y});
+        }
+        if (clientCoords.y >= windowDimensions.height){
+            setClientCoords({x: clientCoords.x, y: windowDimensions.height / 2});
+        }
     }
 
     //On drag, this will record the coords
@@ -37,9 +43,15 @@ function Table({title, attributes}) {
     }
 
 
+    useEffect(() => {
+        window.addEventListener("resize", resizeHandler, false);
+        // eslint-disable-next-line
+    }, [width, height]);
+
+
     return(
         <Draggable onDrag={handleDrag} onStop={eventLogger} defaultPosition={{x: windowDimensions.width / 2, y: windowDimensions.height / 2}} 
-            bounds="parent">
+            bounds="parent" position={{x: clientCoords.x, y: clientCoords.y}}>
             <div className='sql-table'>
                 <h2> {title} </h2>
                 <h3>(x: {clientCoords.x}, y: {clientCoords.y})</h3>
