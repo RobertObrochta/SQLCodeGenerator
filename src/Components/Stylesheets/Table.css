@@ -4,7 +4,7 @@
     background-color: #424856;
     width: max-content;
     height: max-content;
-    padding: 0.1% 1% 0.5% 1%; 
+    /* padding: 0.1% 1% 0.5% 1%;  */
     color: white;
     position: absolute;
 }
@@ -12,4 +12,37 @@
 .sql-table:hover {
     border: 1px solid #98c379;
     cursor: move;
+}
+
+.sql-header{
+    padding-bottom: 5%;
+    padding-top: 5%;
+    border-bottom: 1px solid #ABB2BF;
+}
+
+.sql-column {
+    display: flex;
+    justify-content: space-between;
+    /* margin: 10px; */
+    margin: 10px 10px 10px 0px;
+    padding: 5%;
+}
+
+.sql-column:hover {
+    border-left: 3px solid #98c379;
+}
+
+.spacer {   
+    width: 50px;
+}
+
+.sql-atrribute-type {
+    color: #ABB2BF;
+}
+
+.sql-bottom {
+    display: flex;
+    justify-content: end;
+    padding: 5%;
+    border-top: 1px solid #ABB2BF;
 }
