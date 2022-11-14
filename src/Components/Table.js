@@ -2,12 +2,15 @@ import React, {useEffect, useState} from 'react'
 import Draggable from 'react-draggable';
 import './Stylesheets/Table.css';
 
+
 function Table({title, attributes}) {
+
     let {width, height} = getWindowDimensions();
 
     const [windowDimensions, setWindowDimensions] = useState({width: width, height: height});
     const [clientCoords, setClientCoords] = useState({x: 5, y: 5});
 
+    // console.log(tables);
     
     function eventLogger (e, data) {
         // console.log('Event: ', e);
@@ -39,9 +42,7 @@ function Table({title, attributes}) {
             x: data.x,
             y: data.y,
         });
-
     }
-
 
     useEffect(() => {
         window.addEventListener("resize", resizeHandler, false);
