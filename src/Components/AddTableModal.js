@@ -5,11 +5,14 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import TableContext from "../Contexts/TableContext";
 
 import './Stylesheets/AddTableModal.css';
 
 
 function AddTableModal(props) {
+    const {setTables} = React.useContext(TableContext); // update the context upon submission
+
     // This will hold the title of the table
     const [title, setTitle] = useState("");
 
@@ -34,12 +37,12 @@ function AddTableModal(props) {
         checkAttributeValidation();
 
         if(titleValidated === true && attributesValidated === true) {
-            const data = { title: title, attributes: inputFields };   // Put data together
+            const data = { title: title, attributes: inputFields};   // Put data together
             props.valueChangeCallback(data);    // Call back to parent component
+            setTables([data]);
             resetData();   // Reset Data
         }
     }
-
     // This will be called when the cancel or the X button is pressed
     function handleClose() {
         props.onHide();  // Call back to parent component
