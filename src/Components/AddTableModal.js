@@ -11,7 +11,7 @@ import './Stylesheets/AddTableModal.css';
 
 
 function AddTableModal(props) {
-    const {tables, setTables} = React.useContext(TableContext); // update the context upon submission
+    const {setTables} = React.useContext(TableContext); // update the context upon submission
 
     // This will hold the title of the table
     const [title, setTitle] = useState("");
@@ -43,7 +43,6 @@ function AddTableModal(props) {
             resetData();   // Reset Data
         }
     }
-    console.log(tables);
     // This will be called when the cancel or the X button is pressed
     function handleClose() {
         props.onHide();  // Call back to parent component
