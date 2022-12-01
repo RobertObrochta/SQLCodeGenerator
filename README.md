@@ -11,10 +11,16 @@
 - [ ] Implement Save State of current board (from TableContext)
     - Initial state will be fetched and passed into TableProvider value={_} in App.js
     - This will also render the tables in their **last saved (x, y) coordinates**, so this needs to be implemented alongside this feature
-- [ ] In the AddTableModal, have an option to remove an attribute if one is accidentally added
-- [ ] Right click options on created tables... *more discussions needed*
+- [ ] Right click options on created tables...
+    - Edit table
+    - Delete table
+    - Generate SQL for just that table
+- [ ] Hover over table/attribute to create relations between other tables
+- [ ] Supabase integration
 
 ### In Progress
+
+- [ ] RO: In the AddTableModal, have an option to remove an attribute if one is accidentally added. Also edit table right click to edit name/data type
 
 ### Completed
 
