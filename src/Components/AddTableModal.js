@@ -80,7 +80,7 @@ function AddTableModal(props) {
             return obj !== toRemove;
         }));   // Set new data, filtering out the one we want to remove
     }
-    console.log(inputFields);
+    
     function checkAttributeValidation(event){
         // Check the validation of the attributes. We can do this by only looking at the last before adding a new element
         const data = inputFields[inputFields.length - 1];
