@@ -12,7 +12,6 @@
     - Initial state will be fetched and passed into TableProvider value={_} in App.js
     - This will also render the tables in their **last saved (x, y) coordinates**, so this needs to be implemented alongside this feature
 - [ ] Right click options on created tables...
-    - Edit table
     - Delete table
     - Generate SQL for just that table
 - [ ] Hover over table/attribute to create relations between other tables
@@ -20,10 +19,11 @@
 
 ### In Progress
 
-- [ ] RO: edit table features after already on workspace to edit:
-    - name
-    - data type
-    - remove/add attribute
+- [ ] RO: Right click options on created tables...
+    - Edit table...
+        1. name
+        2. data type 
+        3. remove/add attribute
 
 ### Completed
 
