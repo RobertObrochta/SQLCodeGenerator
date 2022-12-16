@@ -5,6 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { CloseButton, Container } from "react-bootstrap";
 import TableContext from "../Contexts/TableContext";
 
 import './Stylesheets/AddTableModal.css';
@@ -72,6 +73,14 @@ function AddTableModal(props) {
         } 
     }
 
+    function removeField(index){
+        let data = [...inputFields];
+        const toRemove = data.at(index);
+        setInputFields(data => data.filter(obj => {
+            return obj !== toRemove;
+        }));   // Set new data, filtering out the one we want to remove
+    }
+    
     function checkAttributeValidation(event){
         // Check the validation of the attributes. We can do this by only looking at the last before adding a new element
         const data = inputFields[inputFields.length - 1];
@@ -119,6 +128,11 @@ function AddTableModal(props) {
                                             <option value="varchar">varchar</option>
                                         </Form.Select>
                                     </Col>
+                                    {inputFields.length > 1 &&
+                                    <Col className="remove-field">
+                                        <CloseButton onClick={(e) => removeField(index)}></CloseButton>
+                                    </Col>
+                                    }
                                 </Row>
                             </>
                         );
