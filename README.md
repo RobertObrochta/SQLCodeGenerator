@@ -20,7 +20,10 @@
 
 ### In Progress
 
-- [ ] RO: In the AddTableModal, have an option to remove an attribute if one is accidentally added. Also edit table right click to edit name/data type
+- [ ] RO: edit table features after already on workspace to edit:
+    - name
+    - data type
+    - remove/add attribute
 
 ### Completed
 
@@ -34,5 +37,6 @@
 - [x] Expand TableContext field to include all possible fields of an individual table
     - title
     - attributes
+- [ ]In the AddTableModal, have an option to remove an attribute if one is accidentally added.
 
 ### Bugs
